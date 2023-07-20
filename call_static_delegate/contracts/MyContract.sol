@@ -71,11 +71,3 @@ contract MyContract {
         return value;
     }
 }
-
-contract NonFunction {
-    uint256 private data;
-
-    function setData() external{
-        data++;
-    }
-}
