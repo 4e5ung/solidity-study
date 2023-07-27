@@ -1,4 +1,4 @@
-# fallback_receive
+# edcsa_transaction
 
 ## 실행 환경
 
