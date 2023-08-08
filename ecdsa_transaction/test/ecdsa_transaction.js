@@ -11,7 +11,7 @@ describe("ecdsa transaction verify 테스트", function () {
     let accounts
     let formattedNonce
     let chainId
-    let gasPrise
+    let gasPrice
 
     before(async function () { 
         // sign accounts list
@@ -25,7 +25,7 @@ describe("ecdsa transaction verify 테스트", function () {
         const nonce = await accounts[0].getTransactionCount()
         formattedNonce = nonce === 0 ? "0x" : ethers.utils.hexlify(nonce)
         chainId = (await ethers.provider.getNetwork()).chainId
-        gasPrise = await ethers.provider.getGasPrice()
+        gasPrice = await ethers.provider.getGasPrice()
     })    
 
     it("트랜잭션 전송(EIP-155 제외)", async function(){   
@@ -113,7 +113,7 @@ describe("ecdsa transaction verify 테스트", function () {
         // 1. [nonce, gasPrice, gasLimit, to, value, data, chainId, 0, 0]의 9개 필드를 포함하는 트랜잭션 데이터 구조 생성한다
         const transactionData = {
             nonce: formattedNonce,
-            gasPrice: gasPrise,
+            gasPrice: gasPrice,
             gasLimit: 30000000,
             to: toAccount,
             value: 10,
@@ -180,7 +180,7 @@ describe("ecdsa transaction verify 테스트", function () {
         // 1. [nonce, gasPrice, gasLimit, to, value, data, chainId, 0, 0]의 9개 필드를 포함하는 트랜잭션 데이터 구조 생성한다
         const transactionData = {
             nonce: formattedNonce,
-            gasPrice: gasPrise,
+            gasPrice: gasPrice,
             gasLimit: 30000000,
             to: toAccount,
             value: 10,
