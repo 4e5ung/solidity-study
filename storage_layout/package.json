@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "node": "npx hardhat node --port 8559 --hostname 192.168.0.227",
+    "test": "hardhat test"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "@openzeppelin/contracts": "^5.0.1",
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.1",
+    "hardhat": "^2.19.4"
+  },
+  "type": "module"
+}
